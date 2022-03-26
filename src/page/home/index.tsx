@@ -1,0 +1,226 @@
+import { Box, Grid, IconButton } from "@mui/material";
+import React, { useState } from "react";
+import Sidebar from "../../component/side-bar";
+import { Color } from "../../theme/colors";
+import { Typography } from "./../../component/global-styles/typography";
+import styled from "styled-components";
+import Button from "../../component/global-styles/button";
+import { breakpoint } from "../../constant/breakpoints";
+import MenuIcon from "@mui/icons-material/Menu";
+import MyWorkCard from "../../component/my-work-card";
+const HomePage = () => {
+  const [sideBarOpen, setSideBarOpen] = useState(false);
+  return (
+    <div>
+      <Grid container wrap="nowrap">
+        <Grid item>
+          <Sidebar open={sideBarOpen} onClose={() => setSideBarOpen(false)} />
+        </Grid>
+        <RightSection item sx={{ flex: 1 }}>
+          {/* hero section */}
+          <Herosection>
+            <MenuIconDiv onClick={() => setSideBarOpen(true)}>
+              <IconButton>
+                <MenuIcon />
+              </IconButton>
+            </MenuIconDiv>
+            <Grid
+              container
+              sx={{ height: "100%" }}
+              className="px-4 sm-ps-6"
+              alignItems={"center"}
+            >
+              <Grid item>
+                <Box>
+                  <Grid container direction={"column"} spacing={3}>
+                    <Grid item>
+                      <Typography
+                        variant="h1"
+                        component="h1"
+                        color={"white"}
+                        fontWeight={900}
+                        sx={{ lineHeight: 1 }}
+                        className={"h-tag"}
+                      >
+                        <span className="blast">H</span>
+                        <span className="blast">i</span>
+                        <span className="blast">,</span>
+                        <br />
+                        <span className="blast">I</span>
+                        <span className="blast">'</span>
+                        <span className="blast">m</span>
+                        &nbsp;
+                        <span className="blast">D</span>
+                        <span className="blast">i</span>
+                        <span className="blast">l</span>
+                        <span className="blast">i</span>
+                        <span className="blast">p</span>
+                        <br />
+                        <span className="blast">S</span>
+                        <span className="blast">o</span>
+                        <span className="blast">f</span>
+                        <span className="blast">t</span>
+                        <span className="blast">w</span>
+                        <span className="blast">a</span>
+                        <span className="blast">r</span>
+                        <span className="blast">e</span>
+                        &nbsp;
+                        <span className="blast">E</span>
+                        <span className="blast">n</span>
+                        <span className="blast">g</span>
+                        <span className="blast">i</span>
+                        <span className="blast">n</span>
+                        <span className="blast">e</span>
+                        <span className="blast">e</span>
+                        <span className="blast">r</span>
+                      </Typography>
+                    </Grid>
+
+                    <Grid item>
+                      <Typography
+                        variant="h6"
+                        color={Color.grey}
+                        className={"p-tag"}
+                      >
+                        Web Developer & Computer Engineer
+                      </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Button>Contact me</Button>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Grid>
+            </Grid>
+          </Herosection>
+
+          {/* work section */}
+          <Worksection>
+            <Grid container className="px-4 sm-ps-6">
+              <Grid item md={12}>
+                <Typography
+                  variant="h2"
+                  component="h2"
+                  color={Color.primary}
+                  fontWeight={900}
+                  sx={{ lineHeight: 1 }}
+                  className={"h-tag"}
+                >
+                  <span className="blast">M</span>
+                  <span className="blast">y</span>
+                  &nbsp;
+                  <span className="blast">P</span>
+                  <span className="blast">o</span>
+                  <span className="blast">r</span>
+                  <span className="blast">t</span>
+                  <span className="blast">f</span>
+                  <span className="blast">o</span>
+                  <span className="blast">l</span>
+                  <span className="blast">i</span>
+                  <span className="blast">o</span>
+                </Typography>
+              </Grid>
+              <Grid item md={12}>
+                <Grid container alignItems={"end"}>
+                  <Grid item md={8}>
+                    <Typography
+                      variant="body1"
+                      color={"white"}
+                      className={"p-tag"}
+                    >
+                      A small gallery of recent projects chosen by me Lorem
+                      ipsum dolor sit amet. Lorem ipsum dolor, sit amet
+                      consectetur adipisicing elit. Molestias cupiditate ab
+                      aliquid facilis praesentium numquam tempore exercitationem
+                      earum, quaerat laudantium ducimus eaque saepe aspernatur
+                      cum vero. Maiores reiciendis vero laboriosam officia
+                      libero non. Quasi adipisci expedita aperiam deserunt nemo
+                      repudiandae temporibus corporis soluta iste ipsam modi
+                      magnam, explicabo odio reiciendis.
+                    </Typography>
+                  </Grid>
+                  <Grid item md={4}>
+                    <Box sx={{ float: "right", pr: 5 }}>
+                      <Button>See More!</Button>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid container>
+              <Grid item xs={5}>
+                <MyWorkCard
+                  image="https://jacekjeznach.com/wp-content/uploads/2021/11/https-club-silversurfers-com-wp-content-themes-club-2B-img-logo-svg.png"
+                  link=""
+                />
+              </Grid>
+            </Grid>
+          </Worksection>
+        </RightSection>
+      </Grid>
+    </div>
+  );
+};
+
+export default HomePage;
+
+const RightSection = styled(Grid)`
+  margin-left: 140px;
+  @media screen and (max-width: ${breakpoint.md}px) {
+    margin-left: 0px;
+  }
+`;
+
+const Herosection = styled.section`
+  background-color: ${Color.dark2};
+  height: 100vh;
+  min-height: fit-content;
+
+  .blast {
+    &:hover {
+      color: ${Color.primary};
+    }
+  }
+`;
+
+const MenuIconDiv = styled.div`
+  float: right;
+  background-color: rgb(128, 128, 128, 0.7);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 2px;
+  display: none;
+  @media screen and (max-width: ${breakpoint.md}px) {
+    display: block;
+  }
+`;
+
+const Worksection = styled.section`
+  background-color: ${Color.dark2};
+  padding: 0px 0px 50px 0px;
+  position: relative;
+  z-index: 1;
+  &:before {
+    content: "Work";
+    position: absolute;
+    font-size: 25rem;
+    font-weight: 700;
+    padding: 0;
+    color: ${Color.grey + 10};
+    height: fit-content;
+    margin: 0;
+    z-index: -1;
+    top: -150px;
+    letter-spacing: 0;
+    right: -10%;
+    @media screen and (max-width: ${breakpoint.md}px) {
+      font-size: 15rem;
+    }
+    @media screen and (max-width: ${breakpoint.sm}px) {
+      font-size: 8rem;
+      top : -50px;
+    }
+  }
+`;
