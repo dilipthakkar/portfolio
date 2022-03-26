@@ -20,7 +20,7 @@ const MyWorkCardWrapper = styled.div<{ image: string }>`
   min-height: 200px;
   min-width: 200px;
   background-image: url(${(props) => props.image});
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;

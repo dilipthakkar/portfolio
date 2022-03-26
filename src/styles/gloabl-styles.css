@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=La+Belle+Aurore&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700&family=Oxanium:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=La+Belle+Aurore&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700&family=Oxanium:wght@400;500;600;700;800&display=swap");
 .rubberband-blast {
   animation: rubberBand 0.3s ease-in-out;
   display: inline-block;
@@ -163,6 +163,54 @@
   padding-bottom: 2rem;
 }
 
+.p-7 {
+  padding: 3rem;
+}
+.pt-7 {
+  padding-top: 3rem;
+}
+.ps-7 {
+  padding-left: 3rem;
+}
+.pe-7 {
+  padding-right: 3rem;
+}
+.pb-7 {
+  padding-bottom: 3rem;
+}
+.px-7 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.py-7 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.p-8 {
+  padding: 5rem;
+}
+.pt-8 {
+  padding-top: 5rem;
+}
+.ps-8 {
+  padding-left: 4.5rem;
+}
+.pe-8 {
+  padding-right: 4.5rem;
+}
+.pb-8 {
+  padding-bottom: 4.5rem;
+}
+.px-8 {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+}
+.py-8 {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
 @media screen and (min-width: 600px) {
   .sm-p-1 {
     padding: 0.3rem;
@@ -305,6 +353,54 @@
   .sm-py-6 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .sm-p-7 {
+    padding: 3rem;
+  }
+  .sm-pt-7 {
+    padding-top: 3rem;
+  }
+  .sm-ps-7 {
+    padding-left: 3rem;
+  }
+  .sm-pe-7 {
+    padding-right: 3rem;
+  }
+  .sm-pb-7 {
+    padding-bottom: 3rem;
+  }
+  .sm-px-7 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .sm-py-7 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .sm-p-8 {
+    padding: 5rem;
+  }
+  .sm-pt-8 {
+    padding-top: 5rem;
+  }
+  .sm-ps-8 {
+    padding-left: 4.5rem;
+  }
+  .sm-pe-8 {
+    padding-right: 4.5rem;
+  }
+  .sm-pb-8 {
+    padding-bottom: 4.5rem;
+  }
+  .sm-px-8 {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+  .sm-py-8 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
 
@@ -451,10 +547,58 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+
+  .md-p-7 {
+    padding: 3rem;
+  }
+  .md-pt-7 {
+    padding-top: 3rem;
+  }
+  .md-ps-7 {
+    padding-left: 3rem;
+  }
+  .md-pe-7 {
+    padding-right: 3rem;
+  }
+  .md-pb-7 {
+    padding-bottom: 3rem;
+  }
+  .md-px-7 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .md-py-7 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .md-p-8 {
+    padding: 5rem;
+  }
+  .md-pt-8 {
+    padding-top: 5rem;
+  }
+  .md-ps-8 {
+    padding-left: 4.5rem;
+  }
+  .md-pe-8 {
+    padding-right: 4.5rem;
+  }
+  .md-pb-8 {
+    padding-bottom: 4.5rem;
+  }
+  .md-px-8 {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+  .md-py-8 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
 }
 
 /* styles for tags */
-.h-tag::before{
+.h-tag::before {
   content: "<h>";
   color: #515152;
   position: relative;
@@ -463,7 +607,7 @@
   font-family: "La Belle Aurore";
   display: block;
 }
-.h-tag::after{
+.h-tag::after {
   content: "</h>";
   color: #515152;
   position: relative;
@@ -472,7 +616,7 @@
   font-family: "La Belle Aurore";
   display: block;
 }
-.p-tag::before{
+.p-tag::before {
   content: "<p>";
   color: #515152;
   position: relative;
@@ -481,8 +625,26 @@
   font-family: "La Belle Aurore";
   display: block;
 }
-.p-tag::after{
+.p-tag::after {
   content: "</p>";
+  color: #515152;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "La Belle Aurore";
+  display: block;
+}
+.section-tag::before{
+  content: "<section>";
+  color: #515152;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "La Belle Aurore";
+  display: block;
+}
+.section-tag::after{
+  content: "</section>";
   color: #515152;
   position: relative;
   font-size: 1.5rem;

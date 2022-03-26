@@ -5,7 +5,8 @@ import "./styles/gloabl-styles.css";
 
 function App() {
   useEffect(() => {
-    require("./script/blast-animation.js")
+    require("./script/blast-animation.js");
+    require("./script/scroll-bar-width.js");
   }, []);
 
   return <Router />;

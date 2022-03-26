@@ -1,4 +1,4 @@
-import { Box, Grid, IconButton } from "@mui/material";
+import { Box, Container, Grid, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../../component/side-bar";
 import { Color } from "../../theme/colors";
@@ -8,11 +8,13 @@ import Button from "../../component/global-styles/button";
 import { breakpoint } from "../../constant/breakpoints";
 import MenuIcon from "@mui/icons-material/Menu";
 import MyWorkCard from "../../component/my-work-card";
+import { myBlogs, myWork } from "./static-data";
+import Blogcard from "../../component/blog-card";
 const HomePage = () => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   return (
     <div>
-      <Grid container wrap="nowrap">
+      <Grid container wrap="nowrap" className="main">
         <Grid item>
           <Sidebar open={sideBarOpen} onClose={() => setSideBarOpen(false)} />
         </Grid>
@@ -147,16 +149,33 @@ const HomePage = () => {
                 </Grid>
               </Grid>
             </Grid>
-
-            <Grid container>
-              <Grid item xs={5}>
-                <MyWorkCard
-                  image="https://jacekjeznach.com/wp-content/uploads/2021/11/https-club-silversurfers-com-wp-content-themes-club-2B-img-logo-svg.png"
-                  link=""
-                />
+            <Box className="section-tag pt-8">
+              <Grid container>
+                {myWork.slice(0, 8).map((item) => (
+                  <Grid item xs={6} sm={4} md={3} sx={{ height: "300px" }}>
+                    <MyWorkCard image={item.image} link={item.link} />
+                  </Grid>
+                ))}
               </Grid>
-            </Grid>
+            </Box>
           </Worksection>
+
+          <Blogsection>
+            {/* <Container> */}
+              <Grid container>
+                {myBlogs.map((item) => (
+                  <Grid item xs={12} sm={6} md={4} className="px-5 pt-7 sm-pt-5">
+                    <Blogcard
+                      title={item.title}
+                      heading={item.heading}
+                      color={item.color}
+                      text={item.text}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            {/* </Container> */}
+          </Blogsection>
         </RightSection>
       </Grid>
     </div>
@@ -220,7 +239,36 @@ const Worksection = styled.section`
     }
     @media screen and (max-width: ${breakpoint.sm}px) {
       font-size: 8rem;
-      top : -50px;
+      top: -50px;
+    }
+  }
+`;
+
+const Blogsection = styled.section`
+  background-color: ${Color.dark2};
+  padding: 50px 0px 50px 0px;
+  position: relative;
+  z-index: 1;
+  /* overflow: hidden; */
+  &:before {
+    content: "Blog";
+    position: absolute;
+    font-size: 25rem;
+    font-weight: 700;
+    padding: 0;
+    color: ${Color.grey + 10};
+    height: fit-content;
+    margin: 0;
+    z-index: -1;
+    top: -150px;
+    letter-spacing: 0;
+    left: 0;
+    @media screen and (max-width: ${breakpoint.md}px) {
+      font-size: 15rem;
+    }
+    @media screen and (max-width: ${breakpoint.sm}px) {
+      font-size: 8rem;
+      top: -50px;
     }
   }
 `;
