@@ -602,7 +602,7 @@
   content: "<h>";
   color: #515152;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-family: "La Belle Aurore";
   display: block;
@@ -611,7 +611,7 @@
   content: "</h>";
   color: #515152;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-family: "La Belle Aurore";
   display: block;
@@ -620,7 +620,7 @@
   content: "<p>";
   color: #515152;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-family: "La Belle Aurore";
   display: block;
@@ -629,7 +629,7 @@
   content: "</p>";
   color: #515152;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-family: "La Belle Aurore";
   display: block;
@@ -638,7 +638,7 @@
   content: "<section>";
   color: #515152;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-family: "La Belle Aurore";
   display: block;
@@ -647,7 +647,25 @@
   content: "</section>";
   color: #515152;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "La Belle Aurore";
+  display: block;
+}
+.form-tag::before{
+  content: "<form>";
+  color: #515152;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "La Belle Aurore";
+  display: block;
+}
+.form-tag::after{
+  content: "</form>";
+  color: #515152;
+  position: relative;
+  font-size: 1.2rem;
   font-weight: 500;
   font-family: "La Belle Aurore";
   display: block;

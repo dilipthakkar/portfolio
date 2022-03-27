@@ -10,6 +10,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import MyWorkCard from "../../component/my-work-card";
 import { myBlogs, myWork } from "./static-data";
 import Blogcard from "../../component/blog-card";
+import { Link } from "react-router-dom";
+import ContactForm from "./contact-form";
 const HomePage = () => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   return (
@@ -160,22 +162,80 @@ const HomePage = () => {
             </Box>
           </Worksection>
 
+          {/* Blog section */}
           <Blogsection>
-            {/* <Container> */}
-              <Grid container>
-                {myBlogs.map((item) => (
-                  <Grid item xs={12} sm={6} md={4} className="px-5 pt-7 sm-pt-5">
-                    <Blogcard
-                      title={item.title}
-                      heading={item.heading}
-                      color={item.color}
-                      text={item.text}
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-            {/* </Container> */}
+            <Grid container>
+              {myBlogs.map((item) => (
+                <Grid item xs={12} sm={6} md={4} className="px-5 pt-7 sm-pt-5">
+                  <Blogcard
+                    title={item.title}
+                    heading={item.heading}
+                    color={item.color}
+                    text={item.text}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+            <Box className="pt-5 sm-pt-7">
+              <Link to="" style={{ textDecoration: "none" }}>
+                <Typography
+                  variant="body1"
+                  color={Color.primary}
+                  style={{ textAlign: "center" }}
+                >
+                  See All Articals....
+                </Typography>
+              </Link>
+            </Box>
           </Blogsection>
+
+          {/* contact section */}
+          <Contactmesection>
+            <Grid container>
+              <Grid item xs={12} md={7} className="px-5 sm-px-6" >
+                <Grid container>
+                  <Grid item>
+                    <Typography
+                      variant="h2"
+                      component="h2"
+                      color={Color.primary}
+                      fontWeight={900}
+                      sx={{ lineHeight: 1 }}
+                      className={"h-tag"}
+                    >
+                      <span className="blast">C</span>
+                      <span className="blast">o</span>
+                      <span className="blast">n</span>
+                      <span className="blast">t</span>
+                      <span className="blast">a</span>
+                      <span className="blast">c</span>
+                      <span className="blast">t</span>
+                      &nbsp;
+                      <span className="blast">M</span>
+                      <span className="blast">e</span>
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography
+                      variant="body1"
+                      component="p"
+                      color={Color.grey}
+                      sx={{ lineHeight: 1 }}
+                      className={"p-tag"}
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Impedit nulla corporis exercitationem eius sequi tempore
+                      temporibus dolore tempora quam natus? Corrupti, a?
+                    </Typography>
+                  </Grid>
+
+                  <Grid item className={"pt-6 form-tag"}>
+                    <ContactForm />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Contactmesection>
         </RightSection>
       </Grid>
     </div>
@@ -263,6 +323,35 @@ const Blogsection = styled.section`
     top: -150px;
     letter-spacing: 0;
     left: 0;
+    @media screen and (max-width: ${breakpoint.md}px) {
+      font-size: 15rem;
+    }
+    @media screen and (max-width: ${breakpoint.sm}px) {
+      font-size: 8rem;
+      top: -50px;
+    }
+  }
+`;
+
+const Contactmesection = styled.section`
+  background-color: ${Color.dark2};
+  padding: 50px 0px 50px 0px;
+  position: relative;
+  z-index: 1;
+  /* overflow: hidden; */
+  &:before {
+    content: "Contact";
+    position: absolute;
+    font-size: 22rem;
+    font-weight: 700;
+    padding: 0;
+    color: ${Color.grey + 10};
+    height: fit-content;
+    margin: 0;
+    z-index: -1;
+    top: -150px;
+    letter-spacing: 0;
+    right: -20%;
     @media screen and (max-width: ${breakpoint.md}px) {
       font-size: 15rem;
     }

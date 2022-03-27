@@ -44,7 +44,7 @@ export const Typography = styled(TypoText)<TextProps>`
   ${(props) =>
     props.variant === "h5" &&
     `
-    font-size : 2rem ; 
+    font-size : 1.7rem ; 
     `};
   ${(props) =>
     props.variant === "h6" &&
@@ -81,7 +81,7 @@ export const Typography = styled(TypoText)<TextProps>`
     ${(props) =>
       props.variant === "h5" &&
       `
-    font-size : 2.1rem ; 
+    font-size : 1.5rem ; 
     `};
     ${(props) =>
       props.variant === "h6" &&
@@ -119,7 +119,7 @@ export const Typography = styled(TypoText)<TextProps>`
     ${(props) =>
       props.variant === "h5" &&
       `
-    font-size : 2.1rem ; 
+    font-size : 1.3rem ; 
     `};
     ${(props) =>
       props.variant === "h6" &&
@@ -157,7 +157,7 @@ export const Typography = styled(TypoText)<TextProps>`
     ${(props) =>
       props.variant === "h5" &&
       `
-    font-size : 2.1rem ; 
+    font-size : 1.3rem ; 
     `};
     ${(props) =>
       props.variant === "h6" &&
@@ -195,7 +195,7 @@ export const Typography = styled(TypoText)<TextProps>`
     ${(props) =>
       props.variant === "h5" &&
       `
-    font-size : 2.1rem ; 
+    font-size : 1.2rem ; 
     `};
     ${(props) =>
       props.variant === "h6" &&
@@ -233,7 +233,7 @@ export const Typography = styled(TypoText)<TextProps>`
     ${(props) =>
       props.variant === "h5" &&
       `
-    font-size : 2.1rem ; 
+    font-size : 1.1rem ; 
     `};
     ${(props) =>
       props.variant === "h6" &&
