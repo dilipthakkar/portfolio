@@ -8,6 +8,7 @@ import styled, { keyframes } from "styled-components";
 import { Color } from "../../theme/colors";
 import { breakpoint } from "../../constant/breakpoints";
 import CloseIcon from "@mui/icons-material/Close";
+import LionLogo from "../lion-logo";
 const Sidebar = ({ open, onClose }) => {
   return (
     <NavbarBox open={open}>
@@ -21,9 +22,11 @@ const Sidebar = ({ open, onClose }) => {
         sx={{ height: "100%" }}
       >
         <Grid item>
-          <Box
-            sx={{ width: "100%", height: 200, backgroundColor: Color.grey }}
-          ></Box>
+          <Box sx={{ width: "100%", height: 200 }}>
+            <LionLogoWrapper>
+              <LionLogo />
+            </LionLogoWrapper>
+          </Box>
         </Grid>
         <Grid item>
           <Linklist>
@@ -75,8 +78,7 @@ const FadeInAnimation = keyframes`
 100%{
   opacity : 1;
 }
-` 
-
+`;
 
 const NavbarBox = styled(Box)<{ open: boolean }>`
   width: 140px;
@@ -91,7 +93,7 @@ const NavbarBox = styled(Box)<{ open: boolean }>`
   @media screen and (max-width: ${breakpoint.md}px) {
     display: ${(props) => (props.open ? "block" : "none")};
     width: 100%;
-    animation : ${FadeInAnimation} 300ms ease-in-out; 
+    animation: ${FadeInAnimation} 300ms ease-in-out;
     overflow: hidden;
   } ;
 `;
@@ -128,9 +130,9 @@ const SocailMediaGrid = styled(Grid)`
 
 const CloseIconDiv = styled.div`
   float: right;
-  background-color: rgba(255, 255, 255,0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   position: absolute;
-  padding : 10px;
+  padding: 10px;
   right: 20px;
   top: 20px;
   display: none;
@@ -141,3 +143,12 @@ const CloseIconDiv = styled.div`
     background-color: rgba(255, 255, 255);
   }
 `;
+
+const LionLogoWrapper = styled(Box)`
+  width : 65%;
+  margin-top : 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width : 150px;
+`
+

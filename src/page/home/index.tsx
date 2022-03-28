@@ -54,7 +54,12 @@ const HomePage = () => {
                         <span className="blast">'</span>
                         <span className="blast">m</span>
                         &nbsp;
-                        <span className="blast">D</span>
+                        <span
+                          className="blast"
+                          style={{ color: Color.primary }}
+                        >
+                          D
+                        </span>
                         <span className="blast">i</span>
                         <span className="blast">l</span>
                         <span className="blast">i</span>
@@ -192,7 +197,7 @@ const HomePage = () => {
           {/* contact section */}
           <Contactmesection>
             <Grid container>
-              <Grid item xs={12} md={7} className="px-5 sm-px-6" >
+              <Grid item xs={12} md={7} className="px-5 sm-px-6">
                 <Grid container>
                   <Grid item>
                     <Typography

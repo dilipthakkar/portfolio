@@ -7,6 +7,7 @@ function App() {
   useEffect(() => {
     require("./script/blast-animation.js");
     require("./script/scroll-bar-width.js");
+    require("./script/lion-logo-animation.js");
   }, []);
 
   return <Router />;
