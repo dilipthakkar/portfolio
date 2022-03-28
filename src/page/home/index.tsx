@@ -12,6 +12,7 @@ import { myBlogs, myWork } from "./static-data";
 import Blogcard from "../../component/blog-card";
 import { Link } from "react-router-dom";
 import ContactForm from "./contact-form";
+import SpiderOptions from "../../component/spider-options";
 const HomePage = () => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   return (
@@ -21,6 +22,11 @@ const HomePage = () => {
           <Sidebar open={sideBarOpen} onClose={() => setSideBarOpen(false)} />
         </Grid>
         <RightSection item sx={{ flex: 1 }}>
+          {/* spider options div */}
+          <SpiderOptionWrapper>
+            <SpiderOptions />
+          </SpiderOptionWrapper>
+
           {/* hero section */}
           <Herosection>
             <MenuIconDiv onClick={() => setSideBarOpen(true)}>
@@ -102,7 +108,6 @@ const HomePage = () => {
               </Grid>
             </Grid>
           </Herosection>
-
           {/* work section */}
           <Worksection>
             <Grid container className="px-4 sm-ps-6">
@@ -166,7 +171,6 @@ const HomePage = () => {
               </Grid>
             </Box>
           </Worksection>
-
           {/* Blog section */}
           <Blogsection>
             <Grid container>
@@ -193,7 +197,6 @@ const HomePage = () => {
               </Link>
             </Box>
           </Blogsection>
-
           {/* contact section */}
           <Contactmesection>
             <Grid container>
@@ -364,5 +367,18 @@ const Contactmesection = styled.section`
       font-size: 8rem;
       top: -50px;
     }
+  }
+`;
+
+const SpiderOptionWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  top: -140px;
+  transition: top 700ms ease-in-out;
+  &:hover {
+    top: 0px;
+  }
+  @media screen and (max-width: ${breakpoint.sm}px) {
+    display : none;
   }
 `;
