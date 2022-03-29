@@ -634,7 +634,7 @@
   font-family: "La Belle Aurore";
   display: block;
 }
-.section-tag::before{
+.section-tag::before {
   content: "<section>";
   color: #515152;
   position: relative;
@@ -643,7 +643,7 @@
   font-family: "La Belle Aurore";
   display: block;
 }
-.section-tag::after{
+.section-tag::after {
   content: "</section>";
   color: #515152;
   position: relative;
@@ -652,7 +652,7 @@
   font-family: "La Belle Aurore";
   display: block;
 }
-.form-tag::before{
+.form-tag::before {
   content: "<form>";
   color: #515152;
   position: relative;
@@ -661,7 +661,7 @@
   font-family: "La Belle Aurore";
   display: block;
 }
-.form-tag::after{
+.form-tag::after {
   content: "</form>";
   color: #515152;
   position: relative;
@@ -669,4 +669,8 @@
   font-weight: 500;
   font-family: "La Belle Aurore";
   display: block;
+}
+
+.invisible-element {
+  opacity: 0 ;
 }

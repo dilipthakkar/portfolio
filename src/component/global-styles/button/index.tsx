@@ -2,13 +2,18 @@ import React, { ReactNode } from "react";
 import { Button as Btn } from "@mui/material";
 import styled from "styled-components";
 import { Color } from "../../../theme/colors";
-const Button = (props: { children: ReactNode ,  }) => {
-  return <CustomBtn>{props.children}</CustomBtn>;
+import CircularProgress from "@mui/material/CircularProgress";
+const Button = (props: { children: ReactNode; loading?: boolean }) => {
+  return (
+    <CustomBtn>
+      {props.loading ? <CustomProgress size={24} /> : props.children}
+    </CustomBtn>
+  );
 };
 
 export default Button;
 
-const CustomBtn = styled(Btn)`
+const CustomBtn = styled(Btn)<{ loading?: boolean }>`
   display: inline-block;
   background-color: transparent;
   border: ${Color.primary} 1px solid;
@@ -36,7 +41,11 @@ const CustomBtn = styled(Btn)`
   &:hover {
     color: black;
     &:after {
-      width: 150%;
+      ${(props) => !props.loading && `width : 150% ; `};
     }
   }
+`;
+
+const CustomProgress = styled(CircularProgress)`
+  color: ${Color.primary};
 `;

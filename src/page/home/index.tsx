@@ -50,7 +50,9 @@ const HomePage = () => {
                         color={"white"}
                         fontWeight={900}
                         sx={{ lineHeight: 1 }}
-                        className={"h-tag"}
+                        className={
+                          "h-tag typing-text-animation invisible-element"
+                        }
                       >
                         <span className="blast">H</span>
                         <span className="blast">i</span>
@@ -118,7 +120,7 @@ const HomePage = () => {
                   color={Color.primary}
                   fontWeight={900}
                   sx={{ lineHeight: 1 }}
-                  className={"h-tag"}
+                  className={"h-tag typing-text-animation invisible-element"}
                 >
                   <span className="blast">M</span>
                   <span className="blast">y</span>
@@ -155,7 +157,7 @@ const HomePage = () => {
                   </Grid>
                   <Grid item md={4}>
                     <Box sx={{ float: "right", pr: 5 }}>
-                      <Button>See More!</Button>
+                      <Button loading>See More!</Button>
                     </Box>
                   </Grid>
                 </Grid>
@@ -163,8 +165,8 @@ const HomePage = () => {
             </Grid>
             <Box className="section-tag pt-8">
               <Grid container>
-                {myWork.slice(0, 8).map((item) => (
-                  <Grid item xs={6} sm={4} md={3} sx={{ height: "300px" }}>
+                {myWork.slice(0, 8).map((item,index) => (
+                  <Grid item xs={6} sm={4} md={3} sx={{ height: "300px" }} key={index}>
                     <MyWorkCard image={item.image} link={item.link} />
                   </Grid>
                 ))}
@@ -174,8 +176,8 @@ const HomePage = () => {
           {/* Blog section */}
           <Blogsection>
             <Grid container>
-              {myBlogs.map((item) => (
-                <Grid item xs={12} sm={6} md={4} className="px-5 pt-7 sm-pt-5">
+              {myBlogs.map((item,index) => (
+                <Grid item xs={12} sm={6} md={4} className="px-5 pt-7 sm-pt-5" key={index}>
                   <Blogcard
                     title={item.title}
                     heading={item.heading}
@@ -191,7 +193,7 @@ const HomePage = () => {
                   variant="body1"
                   color={Color.primary}
                   // style={{ textAlign: "center" }}
-                  center
+                  align={"center"}
                 >
                   See All Articals....
                 </Typography>
@@ -210,7 +212,9 @@ const HomePage = () => {
                       color={Color.primary}
                       fontWeight={900}
                       sx={{ lineHeight: 1 }}
-                      className={"h-tag"}
+                      className={
+                        "h-tag typing-text-animation invisible-element"
+                      }
                     >
                       <span className="blast">C</span>
                       <span className="blast">o</span>

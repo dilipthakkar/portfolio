@@ -8,20 +8,13 @@ interface TextProps {
   variant?: string;
   component?: string;
   fontWeight?: number;
-  right?: boolean;
-  center?: boolean;
-  left?: boolean;
 }
 
 
 const StyledText = styled(TypoText)<any>`
   color: ${(props) => props.color};
   font-weight: ${(props) => props.fontWeight || "normal"};
-  text-align: ${(props) =>
-    (props.right && "right") ||
-    (props.center && "center") ||
-    (props.left && "left") ||
-    "left"};
+ 
   ${(props) =>
     props.variant === "h1" &&
     `

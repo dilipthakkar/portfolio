@@ -8,10 +8,10 @@ const ContactForm = () => {
     <div>
       <form name="contact-form">
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <InputField placeholder="Name" type="text"></InputField>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <InputField placeholder="Email" type="text"></InputField>
           </Grid>
           <Grid item xs={12}>

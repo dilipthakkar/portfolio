@@ -27,9 +27,9 @@ const SpiderOptions = () => {
             </li>
             <li>
               <AudiotrackIcon />
-              <li>
-                <MusicOffIcon />
-              </li>
+            </li>
+            <li>
+              <MusicOffIcon />
             </li>
           </OptionList>
         </OptionContainer>
