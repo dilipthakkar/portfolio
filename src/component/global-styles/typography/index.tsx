@@ -1,19 +1,20 @@
 import styled, { StyledComponent } from "styled-components";
-import { Typography as TypoText } from "@mui/material";
+import { Typography as TypoText, TypographyTypeMap , TypographyProps } from "@mui/material";
 import React from "react";
 import { breakpoint } from "../../../constant/breakpoints";
 
-type TextProps = {
-  color: string;
-  variant: string;
-  component: string;
-  fontWeight: number;
-  right: boolean;
-  center: boolean;
-  left: boolean;
-};
+interface TextProps {
+  color?: string;
+  variant?: string;
+  component?: string;
+  fontWeight?: number;
+  right?: boolean;
+  center?: boolean;
+  left?: boolean;
+}
 
-export const Typography = styled(TypoText)<TextProps>`
+
+const StyledText = styled(TypoText)<any>`
   color: ${(props) => props.color};
   font-weight: ${(props) => props.fontWeight || "normal"};
   text-align: ${(props) =>
@@ -247,4 +248,17 @@ export const Typography = styled(TypoText)<TextProps>`
     font-family : "Open Sans",sans-serif; 
     `};
   }
-` as typeof TypoText;
+`;
+
+
+
+export const Typography = (props : TypographyProps & TextProps) => {
+  return <StyledText {...props}/>
+} 
+
+
+
+
+
+
+

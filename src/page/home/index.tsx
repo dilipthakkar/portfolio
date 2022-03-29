@@ -190,7 +190,8 @@ const HomePage = () => {
                 <Typography
                   variant="body1"
                   color={Color.primary}
-                  style={{ textAlign: "center" }}
+                  // style={{ textAlign: "center" }}
+                  center
                 >
                   See All Articals....
                 </Typography>
@@ -379,6 +380,6 @@ const SpiderOptionWrapper = styled.div`
     top: 0px;
   }
   @media screen and (max-width: ${breakpoint.sm}px) {
-    display : none;
+    display: none;
   }
 `;
