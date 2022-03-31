@@ -9,7 +9,9 @@ import { Color } from "../../theme/colors";
 import { breakpoint } from "../../constant/breakpoints";
 import CloseIcon from "@mui/icons-material/Close";
 import LionLogo from "../lion-logo";
+import { useNavigate } from "react-router-dom";
 const Sidebar = ({ open, onClose }) => {
+  const navigate = useNavigate();
   return (
     <NavbarBox open={open}>
       <CloseIconDiv onClick={onClose}>
@@ -23,7 +25,11 @@ const Sidebar = ({ open, onClose }) => {
       >
         <Grid item>
           <Box sx={{ width: "100%", height: 200 }}>
-            <LionLogoWrapper>
+            <LionLogoWrapper
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               <LionLogo />
             </LionLogoWrapper>
           </Box>
@@ -31,7 +37,7 @@ const Sidebar = ({ open, onClose }) => {
         <Grid item>
           <Linklist>
             <li>
-              <NavLink to={"/"}>About</NavLink>
+              <NavLink to={"/about"}>About</NavLink>
             </li>
 
             <li>

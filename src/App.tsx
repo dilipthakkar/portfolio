@@ -4,18 +4,15 @@ import "./App.css";
 import Router from "./router/routes";
 import "./styles/gloabl-styles.css";
 import store from "./features/store";
+import { BrowserRouter } from "react-router-dom";
 function App() {
-  useEffect(() => {
-    require("./script/blast-animation.js");
-    require("./script/scroll-bar-width.js");
-    require("./script/lion-logo-animation.js");
-    require("./script/scroll-animation.js");
-    
-  }, []);
 
   return (
     <Provider store={store}>
+    <BrowserRouter>
+
       <Router />
+      </BrowserRouter>
     </Provider>
   );
 }
