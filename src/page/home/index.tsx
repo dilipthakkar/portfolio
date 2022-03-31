@@ -13,6 +13,7 @@ import Blogcard from "../../component/blog-card";
 import { Link } from "react-router-dom";
 import ContactForm from "./contact-form";
 import SpiderOptions from "../../component/spider-options";
+import LocationMap from "../../component/location-map";
 const HomePage = () => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   return (
@@ -165,8 +166,15 @@ const HomePage = () => {
             </Grid>
             <Box className="section-tag pt-8">
               <Grid container>
-                {myWork.slice(0, 8).map((item,index) => (
-                  <Grid item xs={6} sm={4} md={3} sx={{ height: "300px" }} key={index}>
+                {myWork.slice(0, 8).map((item, index) => (
+                  <Grid
+                    item
+                    xs={6}
+                    sm={4}
+                    md={3}
+                    sx={{ height: "300px" }}
+                    key={index}
+                  >
                     <MyWorkCard image={item.image} link={item.link} />
                   </Grid>
                 ))}
@@ -176,8 +184,15 @@ const HomePage = () => {
           {/* Blog section */}
           <Blogsection>
             <Grid container>
-              {myBlogs.map((item,index) => (
-                <Grid item xs={12} sm={6} md={4} className="px-5 pt-7 sm-pt-5" key={index}>
+              {myBlogs.map((item, index) => (
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  className="px-5 pt-7 sm-pt-5"
+                  key={index}
+                >
                   <Blogcard
                     title={item.title}
                     heading={item.heading}
@@ -246,6 +261,11 @@ const HomePage = () => {
                     <ContactForm />
                   </Grid>
                 </Grid>
+              </Grid>
+
+              <Grid item xs={12} md={4}>
+
+                <LocationMap />
               </Grid>
             </Grid>
           </Contactmesection>

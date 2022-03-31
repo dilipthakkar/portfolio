@@ -4,18 +4,22 @@ import { Color } from "../../../theme/colors";
 type InputProp = {
   placeholder: string;
   type: string;
+  name: string;
+  value: string | number;
   onChange?: (e: any) => void;
+  onBlur?: (e: any) => void;
+  error?: boolean;
 };
 const InputField = (props: InputProp) => {
-  const { placeholder, type, onChange } = props;
+  const { placeholder, type, onChange, onBlur, value, name, error } = props;
   return (
     <CustomInputBox>
       {type == "textarea" ? (
-        <CustomTextArea placeholder={placeholder} rows={5}>
+        <CustomTextArea {...props} rows={5} >
           {/* {placeholder} */}
         </CustomTextArea>
       ) : (
-        <CustomInput placeholder={placeholder} type={type} />
+        <CustomInput {...props} error={error} autoComplete={"off"} />
       )}
       <span></span>
     </CustomInputBox>
@@ -28,7 +32,7 @@ const CustomInputBox = styled.div`
   position: relative;
 `;
 
-const CustomInput = styled.input`
+const CustomInput = styled.input<{ error?: boolean }>`
   background-color: ${Color.grey + 10};
   border: none;
   width: 100%;
@@ -49,6 +53,7 @@ const CustomInput = styled.input`
     display: block;
     background-color: ${Color.primary};
     transition: width 200ms ease-in-out;
+    ${(props) => props.error && `background-color: ${Color.rose}; width : 100%`}
   }
   &:focus {
     outline: none;
@@ -59,7 +64,7 @@ const CustomInput = styled.input`
   }
 `;
 
-const CustomTextArea = styled.textarea`
+const CustomTextArea = styled.textarea<{ error?: boolean }>`
   background-color: ${Color.grey + 10};
   border: none;
   width: 100%;
@@ -82,6 +87,7 @@ const CustomTextArea = styled.textarea`
     display: block;
     background-color: ${Color.primary};
     transition: width 200ms ease-in-out;
+    ${(props) => props.error && `background-color: ${Color.rose}; width : 100%`}
   }
   &:focus {
     outline: none;

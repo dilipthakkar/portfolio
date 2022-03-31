@@ -3,9 +3,17 @@ import { Button as Btn } from "@mui/material";
 import styled from "styled-components";
 import { Color } from "../../../theme/colors";
 import CircularProgress from "@mui/material/CircularProgress";
-const Button = (props: { children: ReactNode; loading?: boolean }) => {
+const Button = (props: {
+  children: ReactNode;
+  loading?: boolean;
+  type?: "submit" | "reset" | "button";
+  onSubmit?: (e : any) => void;
+}) => {
   return (
-    <CustomBtn>
+    <CustomBtn type={props.type || "submit"} onClick={(e)=>{
+      e.preventDefault();
+      props.onSubmit(e);
+    }}>
       {props.loading ? <CustomProgress size={24} /> : props.children}
     </CustomBtn>
   );
@@ -42,6 +50,9 @@ const CustomBtn = styled(Btn)<{ loading?: boolean }>`
     color: black;
     &:after {
       ${(props) => !props.loading && `width : 150% ; `};
+    }
+    svg {
+      color : black;
     }
   }
 `;

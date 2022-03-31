@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Howl, Howler } from "howler";
 import Svg1 from "./../../assets/images/Slice 1.svg";
 import Svg2 from "./../../assets/images/Slice 2.svg";
 import styled, { keyframes } from "styled-components";
@@ -6,11 +7,24 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import AudiotrackIcon from "@mui/icons-material/Audiotrack";
 import MusicOffIcon from "@mui/icons-material/MusicOff";
 import { Color } from "../../theme/colors";
-
+const soundFile = require("../../assets/sound/music-1.wav");
+const howlObj = new Howl({
+  src: soundFile,
+  loop: true,
+  volume: 0.5,
+});
 const SpiderOptions = () => {
   const [open, setOpen] = useState(false);
-  const musicOn = true;
+  const [isPlaying, setIsPlaying] = useState(false);
+  
   const theme = "dark";
+  useEffect(() => {
+    if (isPlaying) {
+      howlObj.play();
+    } else {
+      howlObj.pause();
+    }
+  }, [isPlaying]);
 
   return (
     <div>
@@ -25,12 +39,23 @@ const SpiderOptions = () => {
             <li>
               <DarkModeIcon />
             </li>
-            <li>
-              <AudiotrackIcon />
-            </li>
-            <li>
-              <MusicOffIcon />
-            </li>
+            {isPlaying ? (
+              <li>
+                <MusicOffIcon
+                  onClick={() => {
+                    setIsPlaying(false);
+                  }}
+                />
+              </li>
+            ) : (
+              <li>
+                <AudiotrackIcon
+                  onClick={() => {
+                    setIsPlaying(true);
+                  }}
+                />
+              </li>
+            )}
           </OptionList>
         </OptionContainer>
         <FirstImage
