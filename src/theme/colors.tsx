@@ -6,4 +6,7 @@ export const Color = {
   rose: "#FD2155",
   lightYellow: "#E4EE89",
   orange: "#ffa500",
+  blue1: "#4169e1",
+  blue2: "#00bfff",
+  
 };

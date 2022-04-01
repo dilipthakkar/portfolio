@@ -1,4 +1,4 @@
-import { Box, Grid} from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React from "react";
 import { Color } from "../../theme/colors";
 import { Typography } from "./../../component/global-styles/typography";
@@ -233,7 +233,7 @@ const HomePage = () => {
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <LocationMap />
+            <div id="map"></div>
           </Grid>
         </Grid>
       </Contactmesection>

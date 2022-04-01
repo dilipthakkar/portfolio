@@ -12,6 +12,9 @@ import { scrollAnimationFile } from "../script/scroll-animation";
 import { blastFile } from "../script/blast-animation";
 import { scrollBarWidthFile } from "../script/scroll-bar-width";
 import { lionLogoFile } from "../script/lion-logo-animation";
+import MySkillPage from "../page/skills";
+import ContactPage from "../page/contact";
+import BlogPage from "../page/blog";
 
 const Router = () => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
@@ -41,6 +44,9 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/about" element={<AboutPage />}></Route>
+          <Route path="/skills" element={<MySkillPage />}></Route>
+          <Route path="/contact" element={<ContactPage />}></Route>
+          <Route path="/blog" element={<BlogPage />}></Route>
         </Routes>
       </RightSection>
     </Grid>

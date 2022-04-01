@@ -48,8 +48,9 @@ const StyledText = styled(TypoText)<any>`
   ${(props) =>
     props.variant === "body1" &&
     `
-    font-size : 1.2rem ;
+    font-size : 16px ;
     font-family : "Open Sans",sans-serif; 
+    letter-spacing : 1px;
     `};
   @media screen and (max-width: ${breakpoint.xl}px) {
     ${(props) =>
@@ -85,7 +86,7 @@ const StyledText = styled(TypoText)<any>`
     ${(props) =>
       props.variant === "body1" &&
       `
-    font-size : 1.2rem ;
+    font-size : 16px ;
     font-family : "Open Sans",sans-serif; 
     `};
   }
@@ -123,7 +124,7 @@ const StyledText = styled(TypoText)<any>`
     ${(props) =>
       props.variant === "body1" &&
       `
-    font-size : 1.2rem ;
+    font-size : 16px ;
     font-family : "Open Sans",sans-serif; 
     `};
   }
@@ -161,7 +162,7 @@ const StyledText = styled(TypoText)<any>`
     ${(props) =>
       props.variant === "body1" &&
       `
-    font-size : 1.2rem ;
+    font-size : 15px ;
     font-family : "Open Sans",sans-serif; 
     `};
   }
@@ -199,7 +200,7 @@ const StyledText = styled(TypoText)<any>`
     ${(props) =>
       props.variant === "body1" &&
       `
-    font-size : 0.9rem ;
+    font-size : 14px ;
     font-family : "Open Sans",sans-serif; 
     `};
   }
@@ -237,7 +238,7 @@ const StyledText = styled(TypoText)<any>`
     ${(props) =>
       props.variant === "body1" &&
       `
-    font-size : 0.9rem ;
+    font-size : 14px ;
     font-family : "Open Sans",sans-serif; 
     `};
   }

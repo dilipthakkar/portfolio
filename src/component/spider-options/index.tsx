@@ -7,16 +7,16 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import AudiotrackIcon from "@mui/icons-material/Audiotrack";
 import MusicOffIcon from "@mui/icons-material/MusicOff";
 import { Color } from "../../theme/colors";
-const soundFile = require("../../assets/sound/music-1.wav");
+const soundFile = require("../../assets/sound/love.mp3");
 const howlObj = new Howl({
   src: soundFile,
   loop: true,
-  volume: 0.5,
+  volume: 0.3,
 });
 const SpiderOptions = () => {
   const [open, setOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  
+
   const theme = "dark";
   useEffect(() => {
     if (isPlaying) {
@@ -36,14 +36,15 @@ const SpiderOptions = () => {
         />
         <OptionContainer open={open}>
           <OptionList>
-            <li>
+            {/* <li>
               <DarkModeIcon />
-            </li>
+            </li> */}
             {isPlaying ? (
               <li>
                 <MusicOffIcon
                   onClick={() => {
                     setIsPlaying(false);
+                    setOpen(false);
                   }}
                 />
               </li>
@@ -52,6 +53,7 @@ const SpiderOptions = () => {
                 <AudiotrackIcon
                   onClick={() => {
                     setIsPlaying(true);
+                    setOpen(false);
                   }}
                 />
               </li>

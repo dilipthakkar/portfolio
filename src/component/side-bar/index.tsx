@@ -41,7 +41,7 @@ const Sidebar = ({ open, onClose }) => {
             </li>
 
             <li>
-              <NavLink to={"/"}>My Skills</NavLink>
+              <NavLink to={"/skills"}>My Skills</NavLink>
             </li>
 
             <li>
@@ -49,11 +49,11 @@ const Sidebar = ({ open, onClose }) => {
             </li>
 
             <li>
-              <NavLink to={"/"}>Contact</NavLink>
+              <NavLink to={"/contact"}>Contact</NavLink>
             </li>
 
             <li>
-              <NavLink to={"/"}>Blog</NavLink>
+              <NavLink to={"/blog"}>Blog</NavLink>
             </li>
           </Linklist>
         </Grid>
