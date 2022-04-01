@@ -1,31 +1,69 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import { Color } from "../../theme/colors";
-import { Typography } from "./../../component/global-styles/typography";
 import styled from "styled-components";
-import Button from "../../component/global-styles/button";
-import { breakpoint } from "../../constant/breakpoints";
-import MyWorkCard from "../../component/my-work-card";
-import Blogcard from "../../component/blog-card";
-import { Link } from "react-router-dom";
-import SpiderOptions from "../../component/spider-options";
-import LocationMap from "../../component/location-map";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LanguageIcon from "@mui/icons-material/Language";
+
+const projects = [
+  {
+    image: "https://source.unsplash.com/random/400x400",
+    title: "tree visualizer",
+    github: "www.github.com/dilipthakkar",
+    link: "www.github.com/dilipthakkar",
+  },
+  {
+    image: "https://source.unsplash.com/random/400x400",
+    title: "tree visualizer",
+    github: "www.github.com/dilipthakkar",
+    link: "www.github.com/dilipthakkar",
+  },
+  {
+    image: "https://source.unsplash.com/random/400x400",
+    title: "tree visualizer",
+    github: "www.github.com/dilipthakkar",
+    link: "www.github.com/dilipthakkar",
+  },
+  {
+    image: "https://source.unsplash.com/random/400x400",
+    title: "tree visualizer",
+    github: "www.github.com/dilipthakkar",
+    link: "www.github.com/dilipthakkar",
+  },
+];
+
 const HomePage = () => {
   return (
     <div>
       <Herosection>
-        <Grid
-          container
-          sx={{ height: "100%" }}
-          className="px-4 sm-ps-6"
-          alignItems={"center"}
-        >
-          <Grid item>
-            <Box></Box>
-          </Grid>
+        <Grid container spacing={4} className={"p-5 pt-7"}>
+          {projects.map((project, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index} >
+              <WorkCard>
+                <span className="toolbar">
+                  <p>./{project.title}</p>
+                  <div>
+                    <abbr title="github" className="github">
+                      <span>
+                        <GitHubIcon className="github-icon" />
+                      </span>
+                    </abbr>
+                    <abbr title="live link" className="web">
+                      <span>
+                        <LanguageIcon className="web-icon" />
+                      </span>
+                    </abbr>
+                  </div>
+                </span>
+                <div className="image-div">
+                  <img src={project.image} />
+                  <span></span>
+                </div>
+              </WorkCard>
+            </Grid>
+          ))}
         </Grid>
       </Herosection>
-      {/* work section */}
     </div>
   );
 };
@@ -44,88 +82,63 @@ const Herosection = styled.section`
   }
 `;
 
-const Worksection = styled.section`
-  background-color: ${Color.dark2};
-  padding: 0px 0px 50px 0px;
-  position: relative;
-  z-index: 1;
-  &:before {
-    content: "Work";
-    position: absolute;
-    font-size: 25rem;
-    font-weight: 700;
-    padding: 0;
-    color: ${Color.grey + 10};
-    height: fit-content;
-    margin: 0;
-    z-index: -1;
-    top: -150px;
-    letter-spacing: 0;
-    right: -10%;
-    @media screen and (max-width: ${breakpoint.md}px) {
-      font-size: 15rem;
-    }
-    @media screen and (max-width: ${breakpoint.sm}px) {
-      font-size: 8rem;
-      top: -50px;
-    }
+const WorkCard = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: fit-content;
+  background-color: ${"#332940"};
+  -webkit-box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%),
+    0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%),
+    0 1px 10px 0 rgb(0 0 0 / 12%);
+  overflow: hidden;
+  .image-div {
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
-`;
-
-const Blogsection = styled.section`
-  background-color: ${Color.dark2};
-  padding: 50px 0px 50px 0px;
-  position: relative;
-  z-index: 1;
-  /* overflow: hidden; */
-  &:before {
-    content: "Blog";
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  img + span {
+    width: 100%;
+    height: 100%;
+    display: block;
     position: absolute;
-    font-size: 25rem;
-    font-weight: 700;
-    padding: 0;
-    color: ${Color.grey + 10};
-    height: fit-content;
-    margin: 0;
-    z-index: -1;
-    top: -150px;
-    letter-spacing: 0;
+    top: 0;
     left: 0;
-    @media screen and (max-width: ${breakpoint.md}px) {
-      font-size: 15rem;
-    }
-    @media screen and (max-width: ${breakpoint.sm}px) {
-      font-size: 8rem;
-      top: -50px;
+    background-color: #00000070;
+    transition: background-color 1s linear;
+    &:hover {
+      background-color: #00000000;
     }
   }
-`;
-
-const Contactmesection = styled.section`
-  background-color: ${Color.dark2};
-  padding: 50px 0px 50px 0px;
-  position: relative;
-  z-index: 1;
-  /* overflow: hidden; */
-  &:before {
-    content: "Contact";
-    position: absolute;
-    font-size: 22rem;
-    font-weight: 700;
-    padding: 0;
-    color: ${Color.grey + 10};
-    height: fit-content;
-    margin: 0;
-    z-index: -1;
-    top: -150px;
-    letter-spacing: 0;
-    right: -20%;
-    @media screen and (max-width: ${breakpoint.md}px) {
-      font-size: 15rem;
+  .toolbar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height : 40px;
+    p {
+      color: white;
+      text-align: center;
     }
-    @media screen and (max-width: ${breakpoint.sm}px) {
-      font-size: 8rem;
-      top: -50px;
+    div {
+      position: absolute;
+      right: 0;
     }
+  }
+  .github-icon {
+    color: ${Color.lightYellow};
+    margin: 4px;
+    cursor: pointer;
+  }
+  .web-icon {
+    color: ${Color.blue2};
+    margin: 4px;
+    cursor: pointer;
   }
 `;

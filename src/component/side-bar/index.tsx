@@ -29,6 +29,7 @@ const Sidebar = ({ open, onClose }) => {
             <LionLogoWrapper
               onClick={() => {
                 navigate("/");
+                onClose();
               }}
             >
               <NameLogo />
@@ -37,23 +38,23 @@ const Sidebar = ({ open, onClose }) => {
         </Grid>
         <Grid item>
           <Linklist>
-            <li>
+            <li onClick={() => onClose()}>
               <NavLink to={"/about"}>About</NavLink>
             </li>
 
-            <li>
+            <li onClick={() => onClose()}>
               <NavLink to={"/skills"}>My Skills</NavLink>
             </li>
 
-            <li>
+            <li onClick={() => onClose()}>
               <NavLink to={"/work"}>Work</NavLink>
             </li>
 
-            <li>
+            <li onClick={() => onClose()}>
               <NavLink to={"/contact"}>Contact</NavLink>
             </li>
 
-            <li>
+            <li onClick={() => onClose()}>
               <NavLink to={"/blog"}>Blog</NavLink>
             </li>
           </Linklist>

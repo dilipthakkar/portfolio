@@ -29,7 +29,7 @@ const Router = () => {
   return (
     <Grid container wrap="nowrap" className="main">
       <Grid item>
-        <Sidebar open={sideBarOpen} onClose={() => setSideBarOpen(false)} />
+        <Sidebar open={sideBarOpen} onClose={() => setSideBarOpen(false)}/>
       </Grid>
       <MenuIconDiv onClick={() => setSideBarOpen(true)}>
         <IconButton>
@@ -66,11 +66,12 @@ const RightSection = styled(Grid)`
 
 const MenuIconDiv = styled.div`
   float: right;
-  background-color: rgb(128, 128, 128, 0.7);
+  background-color: rgb(128, 128, 128, 0.9);
   position: absolute;
   right: 20px;
   top: 20px;
   padding: 2px;
+  
   display: none;
   @media screen and (max-width: ${breakpoint.md}px) {
     display: block;
@@ -80,7 +81,8 @@ const MenuIconDiv = styled.div`
 const SpiderOptionWrapper = styled.div`
   position: absolute;
   right: 0;
-  top: -140px;
+  top: -200px;
+  z-index : 11111;
   transition: top 700ms ease-in-out;
   &:hover {
     top: 0px;

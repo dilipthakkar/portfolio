@@ -59,14 +59,23 @@ const AboutPage = () => {
             </Grid>
           </Grid>
 
-          <Grid item xs={12} md={6}>
-            <Grid container justifyContent={"center"}>
+          <Grid item xs={12} md={6} className={""}>
+            <Grid
+              container
+              justifyContent={"center"}
+              alignItems={"center"}
+              className="p-7"
+            >
               <Grid item>
-                <SelfImage>
-                  <img src={selfimage} alt="self" />
-                  <span className="before"></span>
-                  <span className="after"></span>
-                </SelfImage>
+                <Grid container justifyContent={"center"}>
+                  <Grid item>
+                    <SelfImage>
+                      <img src={selfimage} alt="self" />
+                      <span className="before"></span>
+                      <span className="after"></span>
+                    </SelfImage>
+                  </Grid>
+                </Grid>
               </Grid>
               <Grid item xs={12}>
                 <CodeSnippet>
@@ -162,15 +171,6 @@ const Herosection = styled.section`
   }
 `;
 
-const EducationCard = styled.div`
-  background-color: ${Color.grey}20;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-`;
-
 const SelfImage = styled.div`
   width: 300px;
   height: 400px;
@@ -208,6 +208,31 @@ const SelfImage = styled.div`
     }
     .before {
       background-color: transparent;
+    }
+  }
+
+  @media screen and (max-width: ${breakpoint.md}px) {
+    width: 250px;
+    height: 330px;
+    .before {
+      width: 100%;
+      height: 101%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: ${Color.primary}60;
+    }
+    .after {
+      width: 100%;
+      height: 101%;
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      border: ${Color.primary} 3px solid;
+      z-index: 0;
+      transition: all 300ms ease-in-out;
     }
   }
 `;

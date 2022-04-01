@@ -57,4 +57,20 @@ export const scrollAnimationFile = () => {
   window.addEventListener("scroll", () => {
     handleTypingTextScrollAnimation(typingTextElements);
   });
+
+  /*  up animation  */
+  const upAnimationElements = document.querySelectorAll(".up-animation");
+  upAnimationElements.forEach((el) => {
+    el.classList.add("position-down");
+  });
+  const handleUpAnimation = (upAnimationElements) => {
+    upAnimationElements.forEach((el) => {
+      if (elementInView(el)) {
+        el.classList.remove("position-down");
+      }
+    });
+  };
+  window.addEventListener("scroll", () => {
+    handleUpAnimation(upAnimationElements);
+  });
 };

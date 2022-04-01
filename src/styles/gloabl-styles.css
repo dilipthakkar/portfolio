@@ -672,5 +672,17 @@
 }
 
 .invisible-element {
-  opacity: 0 ;
+  opacity: 0;
+}
+
+.up-animation {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  transition: top 700ms linear, opacity 700ms ease-in-out;
+}
+
+.position-down {
+  top: 100px !important;
+  opacity: 0;
 }

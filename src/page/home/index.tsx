@@ -161,7 +161,7 @@ const HomePage = () => {
               xs={12}
               sm={6}
               md={4}
-              className="px-5 pt-7 sm-pt-5"
+              className="px-5 pt-7 sm-pt-5 up-animation"
               key={index}
             >
               <Blogcard
