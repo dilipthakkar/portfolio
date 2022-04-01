@@ -21,9 +21,7 @@ const HomePage = () => {
           alignItems={"center"}
         >
           <Grid item>
-            <Box>
-              
-            </Box>
+            <Box></Box>
           </Grid>
         </Grid>
       </Herosection>

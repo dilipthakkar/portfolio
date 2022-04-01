@@ -4,6 +4,8 @@ import styled, { keyframes } from "styled-components";
 import { Typography } from "../../component/global-styles/typography";
 import { breakpoint } from "../../constant/breakpoints";
 import { Color } from "../../theme/colors";
+import selfimage from "../../assets/images/IMG_20210818_131812.jpg";
+import CodeSnippet from "../../component/code-snippet";
 
 const AboutPage = () => {
   return (
@@ -39,9 +41,10 @@ const AboutPage = () => {
               </Grid>
               <Grid item>
                 <Typography variant="body1" color={"white"} className={"p-tag"}>
-                  I’m a Software Developer located in India. I have a serious
-                  passion for UI effects, animations and creating intuitive,
-                  dynamic user experiences.
+                  Hello! My name is Dilip and I enjoy creating things that live
+                  on the internet. I’m a Software Developer located in India. I
+                  have a serious passion for UI effects, animations and creating
+                  intuitive, dynamic user experiences.
                   <br />
                   <br />
                   Well-organised person, problem solver, independent employee
@@ -57,35 +60,82 @@ const AboutPage = () => {
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <EducationCard>
-              <Typography
-                variant="h6"
-                component="h6"
-                color={"white"}
-                fontWeight={700}
-              >
-                Bachelor's Of TechnologyComputer Science
-              </Typography>
-              <Typography
-                variant="body1"
-                component="p"
-                color={Color.grey}
-                className={"pt-2"}
-              >
-                2018-2022
-              </Typography>
-              <Typography variant="body1" component="p" color={Color.grey}>
-                Computer Science
-              </Typography>
-              <Typography
-                variant="body1"
-                component="p"
-                color={Color.grey}
-                className={"pt-2"}
-              >
-                Modern institute of technology and research center, Alwar(Raj)
-              </Typography>
-            </EducationCard>
+            <Grid container justifyContent={"center"}>
+              <Grid item>
+                <SelfImage>
+                  <img src={selfimage} alt="self" />
+                  <span className="before"></span>
+                  <span className="after"></span>
+                </SelfImage>
+              </Grid>
+              <Grid item xs={12}>
+                <CodeSnippet>
+                  <Typography color={"#BF40BF"} component={"span"}>
+                    const &nbsp;
+                  </Typography>
+                  <Typography color={"#FF5733 "} component={"span"}>
+                    name &nbsp;
+                  </Typography>
+                  <Typography color={"white"} component={"span"}>
+                    = &nbsp;
+                  </Typography>
+                  <Typography color={"#228B22"} component={"span"}>
+                    "dilip" &nbsp;
+                  </Typography>
+                  <Typography color={"white"} component={"span"}>
+                    ; &nbsp;
+                  </Typography>
+                  <br />
+                  <Typography color={"#BF40BF"} component={"span"}>
+                    const &nbsp;
+                  </Typography>
+                  <Typography color={"#FF5733 "} component={"span"}>
+                    profession &nbsp;
+                  </Typography>
+                  <Typography color={"white"} component={"span"}>
+                    = &nbsp;
+                  </Typography>
+                  <Typography color={"#228B22"} component={"span"}>
+                    "software developer" &nbsp;
+                  </Typography>
+                  <Typography color={"white"} component={"span"}>
+                    ; &nbsp;
+                  </Typography>
+                  <br />
+                  <Typography color={"#BF40BF"} component={"span"}>
+                    while
+                  </Typography>
+                  <Typography color={"skyblue"} component={"span"}>
+                    (1)&nbsp;
+                  </Typography>
+                  <Typography color={Color.lightYellow} component={"span"}>
+                    &#123;
+                    <br />{" "}
+                  </Typography>
+                  <Typography color={"#d46626"} component={"span"}>
+                    &nbsp;&nbsp;&nbsp;&nbsp; console
+                  </Typography>
+                  <Typography color={"white"} component={"span"}>
+                    .
+                  </Typography>
+                  <Typography color={"#7a74ca"} component={"span"}>
+                    log
+                  </Typography>
+                  <Typography color={"white"} component={"span"}>
+                    (
+                  </Typography>
+                  <Typography color={"#228B22"} component={"span"}>
+                    "code , fuck , lift"
+                  </Typography>
+                  <Typography color={"white"} component={"span"}>
+                    ) ;<br />
+                  </Typography>
+                  <Typography color={Color.lightYellow} component={"span"}>
+                    &#125; ;
+                  </Typography>
+                </CodeSnippet>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Herosection>
@@ -119,4 +169,45 @@ const EducationCard = styled.div`
   padding: 20px;
   height: 100%;
   width: 100%;
+`;
+
+const SelfImage = styled.div`
+  width: 300px;
+  height: 400px;
+  position: relative;
+  margin-bottom: 30px;
+  img {
+    width: 100%;
+    height: auto;
+    z-index: 4;
+  }
+  .before {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: ${Color.primary}60;
+  }
+  .after {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: ${Color.primary} 3px solid;
+    z-index: 0;
+    transition: all 300ms ease-in-out;
+  }
+  &:hover {
+    .after {
+      top: 0;
+      left: 0;
+    }
+    .before {
+      background-color: transparent;
+    }
+  }
 `;

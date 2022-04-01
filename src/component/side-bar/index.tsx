@@ -10,6 +10,7 @@ import { breakpoint } from "../../constant/breakpoints";
 import CloseIcon from "@mui/icons-material/Close";
 import LionLogo from "../lion-logo";
 import { useNavigate } from "react-router-dom";
+import NameLogo from "../logo";
 const Sidebar = ({ open, onClose }) => {
   const navigate = useNavigate();
   return (
@@ -30,7 +31,7 @@ const Sidebar = ({ open, onClose }) => {
                 navigate("/");
               }}
             >
-              <LionLogo />
+              <NameLogo />
             </LionLogoWrapper>
           </Box>
         </Grid>
