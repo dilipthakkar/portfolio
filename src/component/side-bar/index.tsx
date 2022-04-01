@@ -45,7 +45,7 @@ const Sidebar = ({ open, onClose }) => {
             </li>
 
             <li>
-              <NavLink to={"/"}>Work</NavLink>
+              <NavLink to={"/work"}>Work</NavLink>
             </li>
 
             <li>

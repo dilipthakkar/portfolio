@@ -15,6 +15,7 @@ import { lionLogoFile } from "../script/lion-logo-animation";
 import MySkillPage from "../page/skills";
 import ContactPage from "../page/contact";
 import BlogPage from "../page/blog";
+import WorkPage from "../page/work";
 
 const Router = () => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
@@ -47,6 +48,7 @@ const Router = () => {
           <Route path="/skills" element={<MySkillPage />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
           <Route path="/blog" element={<BlogPage />}></Route>
+          <Route path="/work" element={<WorkPage />}></Route>
         </Routes>
       </RightSection>
     </Grid>

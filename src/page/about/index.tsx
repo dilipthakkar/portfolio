@@ -46,7 +46,7 @@ const AboutPage = () => {
                   <br />
                   Well-organised person, problem solver, independent employee
                   with high attention to detail. Fan of MMA, outdoor activities,
-                  TV series and English literature. 
+                  TV series and English literature.
                   <br />
                   <br />
                   Interested in the entire frontend spectrum and working on
@@ -54,6 +54,38 @@ const AboutPage = () => {
                 </Typography>
               </Grid>
             </Grid>
+          </Grid>
+
+          <Grid item xs={12} md={6}>
+            <EducationCard>
+              <Typography
+                variant="h6"
+                component="h6"
+                color={"white"}
+                fontWeight={700}
+              >
+                Bachelor's Of TechnologyComputer Science
+              </Typography>
+              <Typography
+                variant="body1"
+                component="p"
+                color={Color.grey}
+                className={"pt-2"}
+              >
+                2018-2022
+              </Typography>
+              <Typography variant="body1" component="p" color={Color.grey}>
+                Computer Science
+              </Typography>
+              <Typography
+                variant="body1"
+                component="p"
+                color={Color.grey}
+                className={"pt-2"}
+              >
+                Modern institute of technology and research center, Alwar(Raj)
+              </Typography>
+            </EducationCard>
           </Grid>
         </Grid>
       </Herosection>
@@ -78,4 +110,13 @@ const Herosection = styled.section`
   & > div {
     margin: auto;
   }
+`;
+
+const EducationCard = styled.div`
+  background-color: ${Color.grey}20;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
 `;
