@@ -4,15 +4,15 @@ import "./App.css";
 import Router from "./router/routes";
 import "./styles/gloabl-styles.css";
 import store from "./features/store";
-import { BrowserRouter } from "react-router-dom";
-function App() {
+import { BrowserRouter , HashRouter } from "react-router-dom";
+function App() { 
 
   return (
     <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
 
       <Router />
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 }

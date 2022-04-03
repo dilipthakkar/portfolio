@@ -1,6 +1,6 @@
 import { Grid, IconButton } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate , HashRouter } from "react-router-dom";
 import Sidebar from "../component/side-bar";
 import HomePage from "../page/home";
 import styled from "styled-components";
@@ -29,7 +29,7 @@ const Router = () => {
   return (
     <Grid container wrap="nowrap" className="main">
       <Grid item>
-        <Sidebar open={sideBarOpen} onClose={() => setSideBarOpen(false)}/>
+        <Sidebar open={sideBarOpen} onClose={() => setSideBarOpen(false)} />
       </Grid>
       <MenuIconDiv onClick={() => setSideBarOpen(true)}>
         <IconButton>
@@ -42,14 +42,14 @@ const Router = () => {
         </SpiderOptionWrapper>
 
         {/* routes */}
-        <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/about" element={<AboutPage />}></Route>
-          <Route path="/skills" element={<MySkillPage />}></Route>
-          <Route path="/contact" element={<ContactPage />}></Route>
-          <Route path="/blog" element={<BlogPage />}></Route>
-          <Route path="/work" element={<WorkPage />}></Route>
-        </Routes>
+          <Routes>
+            <Route path="/" element={<HomePage />}></Route>
+            <Route path="/about" element={<AboutPage />}></Route>
+            <Route path="/skills" element={<MySkillPage />}></Route>
+            <Route path="/contact" element={<ContactPage />}></Route>
+            <Route path="/blog" element={<BlogPage />}></Route>
+            <Route path="/work" element={<WorkPage />}></Route>
+          </Routes>
       </RightSection>
     </Grid>
   );
@@ -71,7 +71,8 @@ const MenuIconDiv = styled.div`
   right: 20px;
   top: 20px;
   padding: 2px;
-  
+  z-index: 444;
+
   display: none;
   @media screen and (max-width: ${breakpoint.md}px) {
     display: block;
@@ -82,7 +83,7 @@ const SpiderOptionWrapper = styled.div`
   position: absolute;
   right: 0;
   top: -200px;
-  z-index : 11111;
+  z-index: 11111;
   transition: top 700ms ease-in-out;
   &:hover {
     top: 0px;
