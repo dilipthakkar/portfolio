@@ -40,9 +40,9 @@ const ContactPage = () => {
                   sx={{ lineHeight: 1 }}
                   className={"p-tag"}
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Impedit nulla corporis exercitationem eius sequi tempore
-                  temporibus dolore tempora quam natus? Corrupti, a?
+                  I’m interested in freelance opportunities – especially
+                  ambitious or large projects. However, if you have other
+                  request or question, don’t hesitate to use the form.
                 </Typography>
               </Grid>
 

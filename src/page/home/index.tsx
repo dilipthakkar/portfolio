@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { Color } from "../../theme/colors";
 import { Typography } from "./../../component/global-styles/typography";
 import styled from "styled-components";
@@ -12,81 +12,95 @@ import { Link } from "react-router-dom";
 import ContactForm from "./contact-form";
 import SpiderOptions from "../../component/spider-options";
 import LocationMap from "../../component/location-map";
+import { mouseAnimation } from "./mouse-animation";
 const HomePage = () => {
+  useEffect(() => {
+    mouseAnimation();
+  }, []);
   return (
     <div>
-      <Herosection>
-        <Grid
-          container
-          sx={{ height: "100%" }}
-          className="px-4 sm-ps-6"
-          alignItems={"center"}
-        >
-          <Grid item>
-            <Box>
-              <Grid container direction={"column"} spacing={3}>
-                <Grid item>
-                  <Typography
-                    variant="h1"
-                    component="h1"
-                    color={"white"}
-                    fontWeight={900}
-                    sx={{ lineHeight: 1 }}
-                    className={"h-tag typing-text-animation invisible-element"}
-                  >
-                    <span className="blast">H</span>
-                    <span className="blast">i</span>
-                    <span className="blast">,</span>
-                    <br />
-                    <span className="blast">I</span>
-                    <span className="blast">'</span>
-                    <span className="blast">m</span>
-                    &nbsp;
-                    <span className="blast" style={{ color: Color.primary }}>
-                      D
-                    </span>
-                    <span className="blast">i</span>
-                    <span className="blast">l</span>
-                    <span className="blast">i</span>
-                    <span className="blast">p</span>
-                    <br />
-                    <span className="blast">S</span>
-                    <span className="blast">o</span>
-                    <span className="blast">f</span>
-                    <span className="blast">t</span>
-                    <span className="blast">w</span>
-                    <span className="blast">a</span>
-                    <span className="blast">r</span>
-                    <span className="blast">e</span>
-                    &nbsp;
-                    <span className="blast">E</span>
-                    <span className="blast">n</span>
-                    <span className="blast">g</span>
-                    <span className="blast">i</span>
-                    <span className="blast">n</span>
-                    <span className="blast">e</span>
-                    <span className="blast">e</span>
-                    <span className="blast">r</span>
-                  </Typography>
-                </Grid>
+      <div style={{ position: "relative" }}>
+        <canvas
+          id="canvas"
+          style={{ position: "absolute", zIndex: 0 }}
+        ></canvas>
+        <Herosection id="hero-hero-hero-section">
+          <Grid
+            container
+            sx={{ height: "100%" }}
+            className="px-4 sm-ps-6"
+            alignItems={"center"}
+          >
+            <Grid item>
+              <Box>
+                <Grid container direction={"column"} spacing={3}>
+                  <Grid item>
+                    <Typography
+                      style={{ position: "relative", zIndex: 1 }}
+                      variant="h1"
+                      component="h1"
+                      color={"white"}
+                      fontWeight={900}
+                      sx={{ lineHeight: 1 }}
+                      className={
+                        "h-tag typing-text-animation invisible-element"
+                      }
+                    >
+                      <span className="blast">H</span>
+                      <span className="blast">i</span>
+                      <span className="blast">,</span>
+                      <br />
+                      <span className="blast">I</span>
+                      <span className="blast">'</span>
+                      <span className="blast">m</span>
+                      &nbsp;
+                      <span className="blast" style={{ color: Color.primary }}>
+                        D
+                      </span>
+                      <span className="blast">i</span>
+                      <span className="blast">l</span>
+                      <span className="blast">i</span>
+                      <span className="blast">p</span>
+                      <br />
+                      <span className="blast">S</span>
+                      <span className="blast">o</span>
+                      <span className="blast">f</span>
+                      <span className="blast">t</span>
+                      <span className="blast">w</span>
+                      <span className="blast">a</span>
+                      <span className="blast">r</span>
+                      <span className="blast">e</span>
+                      &nbsp;
+                      <span className="blast">E</span>
+                      <span className="blast">n</span>
+                      <span className="blast">g</span>
+                      <span className="blast">i</span>
+                      <span className="blast">n</span>
+                      <span className="blast">e</span>
+                      <span className="blast">e</span>
+                      <span className="blast">r</span>
+                    </Typography>
+                  </Grid>
 
-                <Grid item>
-                  <Typography
-                    variant="h6"
-                    color={Color.grey}
-                    className={"p-tag"}
-                  >
-                    Web Developer & Computer Engineer
-                  </Typography>
+                  <Grid item>
+                    <Typography
+                      variant="h6"
+                      color={Color.grey}
+                      className={"p-tag"}
+                    >
+                      Web Developer & Computer Engineer
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Button>Contact me</Button>
+                  </Grid>
                 </Grid>
-                <Grid item>
-                  <Button>Contact me</Button>
-                </Grid>
-              </Grid>
-            </Box>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Herosection>
+        </Herosection>
+      </div>
+
       {/* work section */}
       <Worksection>
         <Grid container className="px-4 sm-ps-6">
@@ -117,19 +131,17 @@ const HomePage = () => {
             <Grid container alignItems={"end"}>
               <Grid item md={8}>
                 <Typography variant="body1" color={"white"} className={"p-tag"}>
-                  A small gallery of recent projects chosen by me Lorem ipsum
-                  dolor sit amet. Lorem ipsum dolor, sit amet consectetur
-                  adipisicing elit. Molestias cupiditate ab aliquid facilis
-                  praesentium numquam tempore exercitationem earum, quaerat
-                  laudantium ducimus eaque saepe aspernatur cum vero. Maiores
-                  reiciendis vero laboriosam officia libero non. Quasi adipisci
-                  expedita aperiam deserunt nemo repudiandae temporibus corporis
-                  soluta iste ipsam modi magnam, explicabo odio reiciendis.
+                  A small gallery of recent projects chosen by me. I've done
+                  them all together with amazing people from companies around
+                  the globe. It's only a drop in the ocean compared to the
+                  entire list.
+                  <br />
+                  Interested to see some more? Visit work page.
                 </Typography>
               </Grid>
               <Grid item md={4}>
                 <Box sx={{ float: "right", pr: 5 }}>
-                  <Button loading>See More!</Button>
+                  <Button>See More!</Button>
                 </Box>
               </Grid>
             </Grid>
@@ -220,9 +232,9 @@ const HomePage = () => {
                   sx={{ lineHeight: 1 }}
                   className={"p-tag"}
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Impedit nulla corporis exercitationem eius sequi tempore
-                  temporibus dolore tempora quam natus? Corrupti, a?
+                  I’m interested in freelance opportunities – especially
+                  ambitious or large projects. However, if you have other
+                  request or question, don’t hesitate to use the form.
                 </Typography>
               </Grid>
 

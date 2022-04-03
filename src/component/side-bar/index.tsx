@@ -62,13 +62,29 @@ const Sidebar = ({ open, onClose }) => {
         <Grid item>
           <SocailMediaGrid container justifyContent={"center"} spacing={0.5}>
             <Grid item>
-              <InstagramIcon />
+              <InstagramIcon
+                onClick={() => {
+                  navigate(
+                    "//www.instagram.com/mr.thakkar___/?utm_medium=copy_link"
+                  );
+                }}
+              />
             </Grid>
             <Grid item>
-              <LinkedInIcon />
+              <LinkedInIcon
+                onClick={() => {
+                  navigate(
+                    "//www.linkedin.com/in/dilip-thakkar-465898194"
+                  );
+                }}
+              />
             </Grid>
             <Grid item>
-              <GitHubIcon />
+              <GitHubIcon
+                onClick={() => {
+                  navigate("//www.github.com/dilipthakkar");
+                }}
+              />
             </Grid>
           </SocailMediaGrid>
         </Grid>
@@ -153,10 +169,9 @@ const CloseIconDiv = styled.div`
 `;
 
 const LionLogoWrapper = styled(Box)`
-  width : 65%;
-  margin-top : 20px;
+  width: 65%;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  max-width : 150px;
-`
-
+  max-width: 150px;
+`;
