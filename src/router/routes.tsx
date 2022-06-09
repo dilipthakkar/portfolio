@@ -12,10 +12,12 @@ import { scrollAnimationFile } from "../script/scroll-animation";
 import { blastFile } from "../script/blast-animation";
 import { scrollBarWidthFile } from "../script/scroll-bar-width";
 import { lionLogoFile } from "../script/lion-logo-animation";
+import {WorkCardFile} from "../script/work-card"
 import MySkillPage from "../page/skills";
 import ContactPage from "../page/contact";
 import BlogPage from "../page/blog";
 import WorkPage from "../page/work";
+import ProjectPage from "../page/work/project-page";
 
 const Router = () => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
@@ -25,6 +27,7 @@ const Router = () => {
     blastFile();
     scrollBarWidthFile();
     lionLogoFile();
+    WorkCardFile();
   }, [navigate]);
   return (
     <Grid container wrap="nowrap" className="main">
@@ -42,14 +45,15 @@ const Router = () => {
         </SpiderOptionWrapper>
 
         {/* routes */}
-          <Routes>
-            <Route path="/" element={<HomePage />}></Route>
-            <Route path="/about" element={<AboutPage />}></Route>
-            <Route path="/skills" element={<MySkillPage />}></Route>
-            <Route path="/contact" element={<ContactPage />}></Route>
-            <Route path="/blog" element={<BlogPage />}></Route>
-            <Route path="/work" element={<WorkPage />}></Route>
-          </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/about" element={<AboutPage />}></Route>
+          <Route path="/skills" element={<MySkillPage />}></Route>
+          <Route path="/contact" element={<ContactPage />}></Route>
+          <Route path="/blog" element={<BlogPage />}></Route>
+          <Route path="/work" element={<WorkPage />}></Route>
+          <Route path="/work/:id" element={<ProjectPage/>}></Route>
+        </Routes>
       </RightSection>
     </Grid>
   );
